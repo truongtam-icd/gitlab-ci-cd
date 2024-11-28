@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:17.6.1-ce.0
+    container_name: gitlab-ce
+    restart: always
+    hostname: 'gitlab.icd-vn.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        # Add any other gitlab.rb configuration here, each on its own line
+        external_url 'http://gitlab.icd-vn.com'
+    ports:
+      - '80:80'
+      - '22:22'
+      #- '443:443'
+    volumes:
+      - './GITLAB_HOME/config:/etc/gitlab'
+      - './GITLAB_HOME/backups:/var/opt/gitlab/backups'
+    shm_size: '256m'
