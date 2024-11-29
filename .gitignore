@@ -1,5 +1,5 @@
 GITLAB_HOME/config
 GITLAB_HOME/backups
-gitlab-project
+gitlab-project/.git
 .DS_Store
 */.DS_Store

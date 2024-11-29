@@ -1,34 +1,65 @@
-# gitlab-ci-cd
+# GitLab CI/CD
 
 
-# List version
-https://hub.docker.com/r/gitlab/gitlab-ce/tags
+## List version
+[Docker Hub ](https://hub.docker.com/r/gitlab/gitlab-ce/tags)
 
 
-# How to run?
+## How to run?
+```
 docker compose up -d
+```
 
 
-# Browser
+## Browser
+![](image/1.png)
+
+
+```
 http://gitlab.icd-vn.com/
-User: root
+Username: root
 ~/GITLAB_HOME/config/initial_root_password has password when install gitlab
+```
+
+![](image/2.png)
+
+## How to run GitLab Runner?
+### Create new runner
+
+![](image/3.png)
 
 
-# How to run GitLab Runner?
-Use shell login to docker install GitLab Runner
+### Get token
+![](image/4.png)
 
-cd /var/opt/setup
-./install-gitlab-runner.sh
+```
+Tags: shell
+Token: glrt-t1_FNzAxifCS6Q1K4MpH1pR
+```
 
 
-export TOKEN="glrt-t1_T-mYEjorwJsYFoiJGKnJ"
-gitlab-runner start
+## Use shell login to docker install GitLab Runner
+
+### Setup GitLab Runner
+```
+./home/setup/install-gitlab-runner.sh
+```
+
+```
 gitlab-runner register
+```
 
-    url: http://gitlab.icd-vn.com
-    token: TOKEN
-    executor: docker
-    image: node:18-alpine3.20
+```
+  Input with params:
+      url: http://gitlab.icd-vn.com
+      token: glrt-t1_FNzAxifCS6Q1K4MpH1pR
+      name: shell-nodejs
+      executor: shell
+```
 
+### Run
+```
 gitlab-runner run
+```
+
+![](image/5.png)

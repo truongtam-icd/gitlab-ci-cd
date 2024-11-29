@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt-get update -y
+apt-get install vim curl -y
 mkdir -p /var/opt/gitlab/gitlab-runner
 curl -L --output /var/opt/gitlab/gitlab-runner/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
 chown -R git:root /var/opt/gitlab/gitlab-runner

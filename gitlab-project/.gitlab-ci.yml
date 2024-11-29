@@ -1,0 +1,28 @@
+stages:
+  - build
+  - test
+  - deploy
+
+job_build:
+  stage: build
+  tags:
+    - shell
+  script:
+    - echo "Building the project"
+    - node --version
+
+job_test:
+  stage: test
+  tags:
+    - shell
+  script:
+    - echo "Running tests"
+    - node --version
+
+job_deploy:
+  stage: deploy
+  tags:
+    - shell
+  script:
+    - echo "Deploy project"
+    - node --version
