@@ -16,4 +16,5 @@ services:
     volumes:
       - './GITLAB_HOME/config:/etc/gitlab'
       - './GITLAB_HOME/backups:/var/opt/gitlab/backups'
+      - './setup:/var/opt/setup'
     shm_size: '256m'
