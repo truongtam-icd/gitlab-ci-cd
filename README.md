@@ -40,10 +40,6 @@ Token: glrt-t1_FNzAxifCS6Q1K4MpH1pR
 
 ## Use shell login to docker install GitLab Runner
 
-### Setup GitLab Runner
-```
-./home/setup/install-gitlab-runner.sh
-```
 
 ```
 gitlab-runner register
@@ -55,11 +51,6 @@ gitlab-runner register
       token: glrt-t1_FNzAxifCS6Q1K4MpH1pR
       name: shell-nodejs
       executor: shell
-```
-
-### Run
-```
-gitlab-runner run
 ```
 
 ![](image/5.png)

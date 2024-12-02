@@ -24,7 +24,7 @@ services:
     image: node:18.20.5
     container_name: gitlab-runner
     restart: always
-    command: tail -F anything
+    command: ./home/setup/install-gitlab-runner.sh
     volumes:
       - './setup:/home/setup'
     networks:
